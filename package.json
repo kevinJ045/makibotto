@@ -1,0 +1,21 @@
+{
+  "name": "cf-workers-telegram-bot-consumer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "node esbuild.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@codebam/cf-workers-telegram-bot": "^6.2.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.24.5",
+    "esbuild": "^0.21.0",
+    "esbuild-plugin-babel": "^0.2.3"
+  }
+}

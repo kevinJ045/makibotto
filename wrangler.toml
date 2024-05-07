@@ -1,0 +1,13 @@
+name = "cf-workers-telegram-bot-consumer"
+main = "worker.js"
+
+workers_dev = true
+compatibility_date = "2023-10-24"
+
+build.command = "npm install && npm run build"
+
+[ai]
+binding = "AI"
+
+[vars]
+CHAT_MODEL = "@hf/thebloke/neural-chat-7b-v3-1-awq"
