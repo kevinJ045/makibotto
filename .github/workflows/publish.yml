@@ -2,7 +2,7 @@ name: deploy to cloudflare workers
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   release:
