@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
       - id: node-modules-cache
         uses: actions/cache@v3
@@ -29,9 +29,8 @@ jobs:
           key: node-modules-${{ hashFiles('package-lock.json') }}
           restore-keys: node-modules-
       - name: cloudflare workers publish
-        uses: cloudflare/wrangler-action@2.0.0
+        uses: cloudflare/wrangler-action@v3
         with:
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           preCommands: |
             # wrangler kv:namespace create KV_GET_SET
