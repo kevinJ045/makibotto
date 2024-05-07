@@ -31,8 +31,8 @@ jobs:
       - name: cloudflare workers publish
         uses: cloudflare/wrangler-action@2.0.0
         with:
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           preCommands: |
             # wrangler kv:namespace create KV_GET_SET
             # wrangler kv:namespace create KV_UID_DATA
