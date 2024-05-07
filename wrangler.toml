@@ -1,4 +1,4 @@
-name = "cf-workers-telegram-bot-consumer"
+name = "makibotto-bot-tg"
 main = "worker.js"
 
 workers_dev = true
@@ -9,5 +9,10 @@ build.command = "npm install && npm run build"
 [ai]
 binding = "AI"
 
+[[d1_databases]]
+binding = "DB"
+database_name = "bot_messages"
+database_id = "ec265de1-8729-4c30-8118-c3ba231a8294"
+
 [vars]
-CHAT_MODEL = "@hf/thebloke/neural-chat-7b-v3-1-awq"
+CHAT_MODEL = "@cf/meta/llama-3-8b-instruct"
