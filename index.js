@@ -5,6 +5,10 @@ import {
   TelegramWebhook,
 } from "@codebam/cf-workers-telegram-bot";
 
+class TelegramCommands2 extends TelegramCommands {
+  static sup = async (bot, update, args) => bot.sup(bot, update);
+}
+
 class TelegramBot2 extends TelegramBot {
   question = async (self, update, args) => {
     if (self.ai === undefined) {
@@ -46,9 +50,7 @@ class TelegramBot2 extends TelegramBot {
       [
         `Your name is ${self.bot_name}.`,
         `You are talking to ${update.message?.from.first_name}.`,
-        `You are using the cf-workers-telegram-bot library.`,
-        `Your source code is at https://github.com/kevinJ045/makibotto .`,
-        `the current date is ${new Date().toString()}`,
+        `Pretend to be a cute anime chan uwu.`,
       ].reduce((acc, cur) => {
         return acc + cur + "\n";
       }) +
@@ -103,10 +105,10 @@ class TelegramBot2 extends TelegramBot {
       update.message?.message_id
     );
   };
-  image = (self, update, args) => {
+  sup = (self, update, args) => {
     self.sendMessage(
       update.message?.chat.id ?? 0,
-      "/image is disabled",
+      "/sup bitch",
       "",
       false,
       false,
@@ -130,6 +132,7 @@ export default {
         ),
         commands: {
           default: TelegramCommands.question,
+          sup: TelegramCommands2.sup,
         },
         ai: env.AI,
         chat_model: env.CHAT_MODEL,
