@@ -105,7 +105,7 @@ class TelegramBot2 extends TelegramBot {
       update.message?.message_id
     );
   };
-  sup = (self, update) => {
+  sup = (self, update) =>
     self.sendMessage(
       update.message?.chat.id ?? 0,
       "/sup bitch",
@@ -114,7 +114,6 @@ class TelegramBot2 extends TelegramBot {
       false,
       update.message?.message_id
     );
-  };
 }
 
 export default {
@@ -133,7 +132,6 @@ export default {
         commands: {
           default: TelegramCommands.question,
           "/sup": TelegramCommands2.sup,
-          "/clear": TelegramCommands.clear,
         },
         ai: env.AI,
         chat_model: env.CHAT_MODEL,
