@@ -46,7 +46,8 @@ class TelegramBot2 extends TelegramBot {
       [
         `Your name is ${self.bot_name}.`,
         `You are talking to ${update.message?.from.first_name}.`,
-        `Your source code is at https://github.com/codebam/cf-workers-telegram-bot .`,
+        `You are using the cf-workers-telegram-bot library.`,
+        `Your source code is at https://github.com/kevinJ045/makibotto .`,
         `the current date is ${new Date().toString()}`,
       ].reduce((acc, cur) => {
         return acc + cur + "\n";
@@ -96,6 +97,16 @@ class TelegramBot2 extends TelegramBot {
     return self.sendMessage(
       update.message?.chat.id ?? 0,
       response,
+      "",
+      false,
+      false,
+      update.message?.message_id
+    );
+  };
+  image = (self, update, args) => {
+    self.sendMessage(
+      update.message?.chat.id ?? 0,
+      "/image is disabled",
       "",
       false,
       false,
