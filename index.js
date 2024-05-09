@@ -105,7 +105,7 @@ class TelegramBot2 extends TelegramBot {
       update.message?.message_id
     );
   };
-  sup = (self, update, args) => {
+  sup = (self, update) => {
     self.sendMessage(
       update.message?.chat.id ?? 0,
       "/sup bitch",
