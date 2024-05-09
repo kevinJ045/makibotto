@@ -132,7 +132,8 @@ export default {
         ),
         commands: {
           default: TelegramCommands.question,
-          sup: TelegramCommands2.sup,
+          "/sup": TelegramCommands2.sup,
+          "/clear": TelegramCommands.clear,
         },
         ai: env.AI,
         chat_model: env.CHAT_MODEL,
