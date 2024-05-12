@@ -1,21 +1,44 @@
 {
-  "name": "cf-workers-telegram-bot-consumer",
+  "name": "makibotto",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "serverless telegram bot on cf workers",
+  "main": "./dist/main/src/main.js",
+  "module": "./dist/main/src/main.js",
+  "files": [
+    "dist",
+    "LICENSE",
+    "LICENSE_MIT",
+    "README.md"
+  ],
+  "keywords": [
+    "cloudflare",
+    "telegram",
+    "worker",
+    "webhook"
+  ],
   "type": "module",
+  "private": false,
   "scripts": {
-    "build": "node esbuild.config.js"
+    "build": "tsc --project tsconfig.json",
+    "lint": "eslint src"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@codebam/cf-workers-telegram-bot": "^6.2.0"
+  "author": "codebam",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codebam/cf-workers-telegram-bot.git"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.24.5",
-    "esbuild": "^0.21.0",
-    "esbuild-plugin-babel": "^0.2.3"
+    "@cloudflare/workers-types": "^4.20240502.0",
+    "@eslint/js": "^9.2.0",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "globals": "^15.1.0",
+    "lerna": "^8.1.2",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.8.0"
   }
 }
